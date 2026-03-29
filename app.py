@@ -10,6 +10,14 @@ reader = easyocr.Reader(['ko', 'en'])
 
 PLATE_PATTERN = re.compile(r'\d{2,3}[가-힣]\d\{4}')
 
+def extract_plate(image):
+    results = reader.readtext(image)
+    for (bbox, text, conf) in results:
+        cleaned = text.replace(" ", "")
+        if PLATE_PATTERN.match(cleaned) and conf > 0.5:
+            return {"plate": cleaned, "confidence": conf}
+    return {"plate": "UNKNOWN", "confidence": 0}
+
 @app.route('/health')
 def health():
     return jsonify({'status' : 'ok'})
