@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+env/
+
+# 모델 파일 (용량 큼)
+models/*.pt
+models/*.pth
+models/*.onnx
+models/*.weights
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# 로그
+*.log
+logs/
