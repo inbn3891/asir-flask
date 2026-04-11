@@ -12,6 +12,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Docker build & push
+      working-directory: ./FLASK-SERVER
       run: |
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
         # 태그명에 :latest를 명시적으로 붙여주는 것이 관리에 유리합니다.
