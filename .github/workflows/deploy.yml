@@ -12,6 +12,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Docker build & push
+      working-directory: flask-server
       run: |
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
           docker build -t inbn3891/asir-flask:latest .
