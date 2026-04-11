@@ -2,4 +2,4 @@ flask
 easyocr
 opencv-python-headless
 torch
-torchvisionc
+torchvision
