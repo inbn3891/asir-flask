@@ -17,7 +17,7 @@ models/*.weights
 Thumbs.db
 
 # VSCode
-.vscode/
+.vscode/ 
 
 # 로그
 *.log
