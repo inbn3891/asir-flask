@@ -14,7 +14,8 @@ jobs:
     - name: Docker build & push
       run: |
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-          docker build -t inbn3891/asir-flask:latest .
+          # -f 옵션을 사용하여 파일명을 명확히 지정합니다.
+          docker build -t inbn3891/asir-flask:latest -f Dockerfile .
           docker push inbn3891/asir-flask:latest
 
     - name: Deploy to EC2
