@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Docker build & push
-        run: |
+      run: |
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
           # 빌드 대상을 FLASK-SERVER 폴더로 지정합니다.
           docker build -t inbn3891/asir-flask:latest ./FLASK-SERVER
