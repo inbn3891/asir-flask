@@ -23,6 +23,7 @@ jobs:
         # 여기서부터는 에러가 나더라도 목록 확인을 위해 로그를 남깁니다.
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
         docker build -t inbn3891/asir-flask:latest .
+        docker push inbn3891/asir-flask:latest
 
     - name: Deploy to EC2
       uses: appleboy/ssh-action@master
